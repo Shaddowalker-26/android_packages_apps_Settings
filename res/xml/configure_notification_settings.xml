@@ -227,7 +227,7 @@
             settings:controller="com.android.settings.notification.NotificationAssistantPreferenceController"/>
 
         <!-- Heads up -->
-        <lineageos.preference.GlobalSettingSwitchPreference
+        <SwitchPreferenceCompat
             android:key="heads_up_notifications_enabled"
             android:order="30"
             android:title="@string/heads_up_notifications_enabled_title"

@@ -178,12 +178,7 @@ public class KeyboxDataPreference extends Preference {
         }
 
         return numberOfKeyboxes == 1
-<<<<<<< HEAD
                 && hasEcdsaKey && hasEcdsaPrivKey && ecdsaCertCount >= 1
                 && hasRsaKey && hasRsaPrivKey && rsaCertCount >= 1;
-=======
-                && hasEcdsaKey && hasEcdsaPrivKey && ecdsaCertCount == 3
-                && hasRsaKey && hasRsaPrivKey && rsaCertCount == 3;
->>>>>>> 111e1b88ba3 (Settings: Add key generation for keybox spoofing [2/2])
     }
 }
