@@ -230,11 +230,12 @@
         android:fragment="com.android.settings.security.MemtagPage"
         settings:controller="com.android.settings.security.MemtagPagePreferenceController" />
 
-    <com.android.settings.custom.preference.GlobalSettingSwitchPreference
-        android:order="92"
-        android:key="window_ignore_secure"
-        android:title="@string/ignore_window_secure_title"
-        android:summary="@string/ignore_window_secure_summary"
-        android:defaultValue="false"/>
+    <SwitchPreference
+    android:key="window_ignore_secure"
+    android:title="@string/ignore_window_secure_title"
+    android:summary="@string/ignore_window_secure_summary"
+    settings:controller="com.android.settings.security.WindowIgnoreSecurePreferenceController"
+    android:defaultValue="false"
+    android:order="92" />
 
 </PreferenceScreen>
