@@ -23,6 +23,7 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.provider.Settings;
+import androidx.preference.TwoStatePreference;
 import android.view.WindowManager;
 
 import com.android.settings.R;
@@ -35,6 +36,10 @@ import com.android.settingslib.widget.SliderPreference;
 
 import java.text.NumberFormat;
 import java.util.Locale;
+
+import androidx.preference.Preference;
+import androidx.preference.SwitchPreference;
+import lineageos.providers.LineageSettings;
 
 /**
  * A fragment to include all the settings related to Gesture Navigation mode.
@@ -51,6 +56,7 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
     private static final String LEFT_EDGE_SEEKBAR_KEY = "gesture_left_back_sensitivity";
     private static final String RIGHT_EDGE_SEEKBAR_KEY = "gesture_right_back_sensitivity";
     private static final String GESTURE_TUTORIAL_KEY = "assistant_gesture_navigation_tutorial";
+   private static final String KEY_GESTURE_NAVBAR_AUTO_HIDE = "gesture_navbar_auto_hide";
     final Intent mLaunchTutorialIntent =  new Intent(ACTION_GESTURE_SANDBOX)
             .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             .putExtra("use_tutorial_menu", true);
@@ -86,6 +92,22 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
         initSliderPreference(LEFT_EDGE_SEEKBAR_KEY);
         initSliderPreference(RIGHT_EDGE_SEEKBAR_KEY);
         initTutorialButton();
+     TwoStatePreference autoHidePref = (TwoStatePreference) findPreference("gesture_navbar_auto_hide");
+
+if (autoHidePref != null) {
+    // Read from standard Android system table
+    int value = Settings.System.getInt(getContext().getContentResolver(),
+            "gesture_navbar_auto_hide", 0);
+    autoHidePref.setChecked(value == 1);
+
+    autoHidePref.setOnPreferenceChangeListener((pref, newValue) -> {
+        boolean enabled = (Boolean) newValue;
+        // Write to standard Android system table
+        return Settings.System.putInt(getContext().getContentResolver(),
+                "gesture_navbar_auto_hide", enabled ? 1 : 0);
+    });
+}
+
     }
 
     @Override
@@ -211,5 +233,10 @@ public class GestureNavigationSettingsFragment extends DashboardFragment {
                     return SystemNavigationPreferenceController.isGestureAvailable(context);
                 }
             };
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        return super.onPreferenceTreeClick(preference);
+    }
 
 }

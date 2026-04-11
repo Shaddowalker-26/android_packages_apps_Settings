@@ -81,7 +81,7 @@
         android:title="@string/back_sensitivity_dialog_message"
         settings:searchable="false"/>
 
-   <lineageos.preference.LineageSystemSettingSwitchPreference
+   <SwitchPreference
         android:key="gesture_navbar_auto_hide"
         android:title="@string/gesture_navbar_auto_hide_title"
         android:summary="@string/gesture_navbar_auto_hide_summary"
