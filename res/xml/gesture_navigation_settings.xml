@@ -80,12 +80,5 @@
         android:key="gesture_navigation_settings_footer"
         android:title="@string/back_sensitivity_dialog_message"
         settings:searchable="false"/>
-
-   <SwitchPreference
-        android:key="gesture_navbar_auto_hide"
-        android:title="@string/gesture_navbar_auto_hide_title"
-        android:summary="@string/gesture_navbar_auto_hide_summary"
-        android:defaultValue="false"
-        android:dependency="navigation_bar_hint" />
 </PreferenceScreen>
 
