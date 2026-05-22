@@ -79,6 +79,6 @@
     <com.android.settingslib.widget.FooterPreference
         android:key="gesture_navigation_settings_footer"
         android:title="@string/back_sensitivity_dialog_message"
-        settings:searchable="false"/>
+        settings:searchable="false"/>\
 </PreferenceScreen>
 
