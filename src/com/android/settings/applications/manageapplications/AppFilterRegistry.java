@@ -309,8 +309,6 @@ public class AppFilterRegistry {
                 return FILTER_APPS_BATTERY_OPTIMIZED;
             case ManageApplications.LIST_TYPE_LONG_BACKGROUND_TASKS:
                 return FILTER_LONG_BACKGROUND_TASKS;
-            case ManageApplications.LIST_TYPE_CLONED_APPS:
-                return FILTER_APPS_CLONE;
             case ManageApplications.LIST_TYPE_NFC_TAG_APPS:
                 return FILTER_APPS_NFC_TAG;
             case ManageApplications.LIST_TYPE_TURN_SCREEN_ON:
