@@ -22,7 +22,6 @@ import com.android.settings.Settings.AlarmsAndRemindersActivity
 import com.android.settings.Settings.AppBatteryUsageActivity
 import com.android.settings.Settings.ChangeNfcTagAppsActivity
 import com.android.settings.Settings.ChangeWifiStateActivity
-import com.android.settings.Settings.ClonedAppsListActivity
 import com.android.settings.Settings.GamesStorageActivity
 import com.android.settings.Settings.HighPowerApplicationsActivity
 import com.android.settings.Settings.LongBackgroundTasksActivity
@@ -99,7 +98,6 @@ object ManageApplicationsUtil {
             AppLocaleDetails::class to LIST_TYPE_APPS_LOCALE,
             AppBatteryUsageActivity::class to LIST_TYPE_BATTERY_OPTIMIZATION,
             LongBackgroundTasksActivity::class to LIST_TYPE_LONG_BACKGROUND_TASKS,
-            ClonedAppsListActivity::class to LIST_TYPE_CLONED_APPS,
             ChangeNfcTagAppsActivity::class to LIST_TYPE_NFC_TAG_APPS,
             TurnScreenOnSettingsActivity::class to LIST_TYPE_TURN_SCREEN_ON,
             UserAspectRatioAppListActivity::class to LIST_TYPE_USER_ASPECT_RATIO_APPS,

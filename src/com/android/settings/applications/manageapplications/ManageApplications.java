@@ -100,7 +100,6 @@ import com.android.settings.Settings.AlarmsAndRemindersActivity;
 import com.android.settings.Settings.AppBatteryUsageActivity;
 import com.android.settings.Settings.ChangeNfcTagAppsActivity;
 import com.android.settings.Settings.ChangeWifiStateActivity;
-import com.android.settings.Settings.ClonedAppsListActivity;
 import com.android.settings.Settings.HighPowerApplicationsActivity;
 import com.android.settings.Settings.LongBackgroundTasksActivity;
 import com.android.settings.Settings.ManageExternalSourcesActivity;
@@ -119,7 +118,6 @@ import com.android.settings.applications.AppStateAlarmsAndRemindersBridge;
 import com.android.settings.applications.AppStateAppBatteryUsageBridge;
 import com.android.settings.applications.AppStateAppOpsBridge.PermissionState;
 import com.android.settings.applications.AppStateBaseBridge;
-import com.android.settings.applications.AppStateClonedAppsBridge;
 import com.android.settings.applications.AppStateInstallAppsBridge;
 import com.android.settings.applications.AppStateLocaleBridge;
 import com.android.settings.applications.AppStateLongBackgroundTasksBridge;
@@ -1109,8 +1107,6 @@ public class ManageApplications extends InstrumentedFragment
             screenTitle = R.string.app_battery_usage_title;
         } else if (className.equals(LongBackgroundTasksActivity.class.getName())) {
             screenTitle = R.string.long_background_tasks_title;
-        } else if (className.equals(ClonedAppsListActivity.class.getName())) {
-            screenTitle = R.string.cloned_apps_dashboard_title;
         } else if (className.equals(ChangeNfcTagAppsActivity.class.getName())) {
             screenTitle = R.string.change_nfc_tag_apps_title;
         } else if (className.equals(TurnScreenOnSettingsActivity.class.getName())) {
@@ -1321,8 +1317,6 @@ public class ManageApplications extends InstrumentedFragment
                 mExtraInfoBridge = new AppStateAppBatteryUsageBridge(mContext, mState, this);
             } else if (mManageApplications.mListType == LIST_TYPE_LONG_BACKGROUND_TASKS) {
                 mExtraInfoBridge = new AppStateLongBackgroundTasksBridge(mContext, mState, this);
-            } else if (mManageApplications.mListType == LIST_TYPE_CLONED_APPS) {
-                mExtraInfoBridge = new AppStateClonedAppsBridge(mContext, mState, this);
             } else if (mManageApplications.mListType == LIST_TYPE_NFC_TAG_APPS) {
                 mExtraInfoBridge = new AppStateNfcTagAppsBridge(mContext, mState, this);
             } else if (mManageApplications.mListType == LIST_TYPE_TURN_SCREEN_ON) {

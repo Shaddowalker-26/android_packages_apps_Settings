@@ -60,20 +60,7 @@
         android:order="-996"
         settings:controller="com.android.settings.applications.DefaultAppsPreferenceController"/>
 
-    <Preference
-        android:key="cloned_apps"
-        android:title="@string/cloned_apps_dashboard_title"
-        android:summary="@string/summary_placeholder"
-        android:order="-995"
-        settings:controller="com.android.settings.applications.ClonedAppsPreferenceController"
-        android:fragment="com.android.settings.applications.manageapplications.ManageApplications">
-        <extra
-            android:name="classname"
-            android:value="com.android.settings.Settings$ClonedAppsListActivity"/>
-        <intent
-            android:action="android.settings.MANAGE_CLONED_APPS_SETTINGS"
-            android:targetPackage="${applicationId}"/>
-    </Preference>
+ 
 
     <PreferenceCategory
         android:key="dashboard_tile_placeholder"

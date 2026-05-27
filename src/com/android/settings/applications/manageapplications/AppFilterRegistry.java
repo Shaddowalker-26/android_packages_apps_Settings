@@ -21,7 +21,6 @@ import androidx.annotation.IntDef;
 import com.android.settings.R;
 import com.android.settings.applications.AppStateAlarmsAndRemindersBridge;
 import com.android.settings.applications.AppStateAppBatteryUsageBridge;
-import com.android.settings.applications.AppStateClonedAppsBridge;
 import com.android.settings.applications.AppStateInstallAppsBridge;
 import com.android.settings.applications.AppStateLocaleBridge;
 import com.android.settings.applications.AppStateLongBackgroundTasksBridge;
@@ -66,7 +65,6 @@ public class AppFilterRegistry {
                 FILTER_APPS_BATTERY_OPTIMIZED,
                 FILTER_APPS_BATTERY_RESTRICTED,
                 FILTER_LONG_BACKGROUND_TASKS,
-                FILTER_APPS_CLONE,
                 FILTER_APPS_NFC_TAG,
                 FILTER_APPS_TURN_SCREEN_ON,
             })
@@ -98,7 +96,6 @@ public class AppFilterRegistry {
     public static final int FILTER_APPS_BATTERY_OPTIMIZED = 22;
     public static final int FILTER_APPS_BATTERY_RESTRICTED = 23;
     public static final int FILTER_LONG_BACKGROUND_TASKS = 24;
-    public static final int FILTER_APPS_CLONE = 25;
     public static final int FILTER_APPS_NFC_TAG = 26;
     public static final int FILTER_APPS_TURN_SCREEN_ON = 27;
     private static final int NUM_FILTER_ENTRIES = 28;
@@ -261,12 +258,6 @@ public class AppFilterRegistry {
                 FILTER_LONG_BACKGROUND_TASKS,
                 R.string.long_background_tasks_title);
 
-        // Apps that are cloneable or cloned.
-        mFilters[FILTER_APPS_CLONE] =
-                new AppFilterItem(
-                        AppStateClonedAppsBridge.FILTER_APPS_CLONE,
-                        FILTER_APPS_CLONE,
-                        R.string.cloned_apps_dashboard_title);
 
         // Apps that are nfc tag allowlisted.
         mFilters[FILTER_APPS_NFC_TAG] =
